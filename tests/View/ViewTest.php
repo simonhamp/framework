@@ -38,8 +38,8 @@ class ViewTest extends TestCase
         $boo = 'ahh!';
         $view = $this->getView();
         $view->with(fn () => $foo);
-        $view->with(fn () => [$baz, 'scream' => $boo]);
-        $this->assertEquals(['foo' => 'bar', 'baz' => 'boom', 'scream' => 'ahh!'], $view->getData());
+        $view->with(fn () => [$baz, 'scream' => $boo, $boo]);
+        $this->assertEquals(['foo' => 'bar', 'baz' => 'boom', 'scream' => 'ahh!', 'boo' => 'ahh!'], $view->getData());
     }
 
     public function testRenderProperlyRendersView()
