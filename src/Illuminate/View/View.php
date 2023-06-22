@@ -260,8 +260,7 @@ class View implements ArrayAccess, Htmlable, ViewContract
             }
 
             $this->data = array_merge($this->data, $with);
-        }
-        else if (is_array($key)) {
+        } else if (is_array($key)) {
             $this->data = array_merge($this->data, $key);
         } else {
             $this->data[$key] = $value;
